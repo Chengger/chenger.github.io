@@ -91,7 +91,13 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2018/07/18/java测试题/java测试题/1.png">
 <meta property="og:image" content="http://yoursite.com/2018/07/18/java测试题/java测试题/2.png">
-<meta property="og:updated_time" content="2018-07-23T00:31:11.686Z">
+<meta property="og:image" content="http://yoursite.com/2018/07/18/java测试题/java测试题/3.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/18/java测试题/java测试题/4.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/18/java测试题/java测试题/5.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/18/java测试题/java测试题/6.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/18/java测试题/java测试题/7.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/18/java测试题/java测试题/8.png">
+<meta property="og:updated_time" content="2018-07-25T12:01:30.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java测试题">
 <meta name="twitter:description" content="1.struts1和struts2的区别从action类上分析:1.Struts1要求Action类继承一个抽象基类。Struts1的一个普遍问题是使用抽象类编程而不是接口。2. Struts 2 Action类可以实现一个Action接口，也可实现其他接口，使可选和定制的服务成为可能。Struts2提供一个ActionSupport基类去实现常用的接口。Action接口不是必须的，任何有exec">
@@ -454,13 +460,16 @@
 
       
         <h1 id="1-struts1和struts2的区别"><a href="#1-struts1和struts2的区别" class="headerlink" title="1.struts1和struts2的区别"></a>1.struts1和struts2的区别</h1><p>从action类上分析:<br>1.Struts1要求Action类继承一个抽象基类。Struts1的一个普遍问题是使用抽象类编程而不是接口。<br>2. Struts 2 Action类可以实现一个Action接口，也可实现其他接口，使可选和定制的服务成为可能。Struts2提供一个ActionSupport基类去实现常用的接口。Action接口不是必须的，任何有execute标识的POJO对象都可以用作Struts2的Action对象。<br>从Servlet 依赖分析:<br>3. Struts1 Action 依赖于Servlet API ,因为当一个Action被调用时HttpServletRequest 和 HttpServletResponse 被传递给execute方法。<br>4. Struts 2 Action不依赖于容器，允许Action脱离容器单独被测试。如果需要，Struts2 Action仍然可以访问初始的request和response。但是，其他的元素减少或者消除了直接访问HttpServetRequest 和 HttpServletResponse的必要性。<br>从action线程模式分析:<br>5. Struts1 Action是单例模式并且必须是线程安全的，因为仅有Action的一个实例来处理所有的请求。单例策略限制了Struts1 Action能作的事，并且要在开发时特别小心。Action资源必须是线程安全的或同步的。<br>6. Struts2 Action对象为每一个请求产生一个实例，因此没有线程安全问题。（实际上，servlet容器给每个请求产生许多可丢弃的对象，并且不会导致性能和垃圾回收问题）</p>
+<hr>
 <h1 id="2-Swing与AWT的区别"><a href="#2-Swing与AWT的区别" class="headerlink" title="2 Swing与AWT的区别"></a>2 Swing与AWT的区别</h1><p>AWT ：是通过调用操作系统的native方法实现的，所以在Windows系统上的AWT窗口就是Windows的风格，而在Unix系统上的则是XWindow风格。 <a href="https://www.baidu.com/s?wd=AWT&amp;tn=44039180_cpr&amp;fenlei=mv6quAkxTZn0IZRqIHckPjm4nH00T1YYm1n1Pjm1mHfsPW03mWcd0ZwV5Hcvrjm3rH6sPfKWUMw85HfYnjn4nH6sgvPsT6K1TL0qnfK1TL0z5HD0IgF_5y9YIZ0lQzqlpA-bmyt8mh7GuZR8mvqVQL7dugPYpyq8Q1T3nW6krjTL" target="_blank" rel="noopener">AWT</a> 中的图形函数与 <a href="https://www.baidu.com/s?wd=%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F&amp;tn=44039180_cpr&amp;fenlei=mv6quAkxTZn0IZRqIHckPjm4nH00T1YYm1n1Pjm1mHfsPW03mWcd0ZwV5Hcvrjm3rH6sPfKWUMw85HfYnjn4nH6sgvPsT6K1TL0qnfK1TL0z5HD0IgF_5y9YIZ0lQzqlpA-bmyt8mh7GuZR8mvqVQL7dugPYpyq8Q1T3nW6krjTL" target="_blank" rel="noopener">操作系统</a> 所提供的图形函数之间有着一一对应的关系，我们把它称为peers。 也就是说，当我们利用 <a href="https://www.baidu.com/s?wd=AWT&amp;tn=44039180_cpr&amp;fenlei=mv6quAkxTZn0IZRqIHckPjm4nH00T1YYm1n1Pjm1mHfsPW03mWcd0ZwV5Hcvrjm3rH6sPfKWUMw85HfYnjn4nH6sgvPsT6K1TL0qnfK1TL0z5HD0IgF_5y9YIZ0lQzqlpA-bmyt8mh7GuZR8mvqVQL7dugPYpyq8Q1T3nW6krjTL" target="_blank" rel="noopener">AWT</a> 来构件图形用户界面的时候，我们实际上是在利用 <a href="https://www.baidu.com/s?wd=%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F&amp;tn=44039180_cpr&amp;fenlei=mv6quAkxTZn0IZRqIHckPjm4nH00T1YYm1n1Pjm1mHfsPW03mWcd0ZwV5Hcvrjm3rH6sPfKWUMw85HfYnjn4nH6sgvPsT6K1TL0qnfK1TL0z5HD0IgF_5y9YIZ0lQzqlpA-bmyt8mh7GuZR8mvqVQL7dugPYpyq8Q1T3nW6krjTL" target="_blank" rel="noopener">操作系统</a> 所提供的图形库。由于不同 <a href="https://www.baidu.com/s?wd=%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F&amp;tn=44039180_cpr&amp;fenlei=mv6quAkxTZn0IZRqIHckPjm4nH00T1YYm1n1Pjm1mHfsPW03mWcd0ZwV5Hcvrjm3rH6sPfKWUMw85HfYnjn4nH6sgvPsT6K1TL0qnfK1TL0z5HD0IgF_5y9YIZ0lQzqlpA-bmyt8mh7GuZR8mvqVQL7dugPYpyq8Q1T3nW6krjTL" target="_blank" rel="noopener">操作系统</a> 的图形库所提供的功能是不一样的，在一个平台上存在的功能在另外一个平台上则可能不存在。为了实现Java语言所宣称的”一次编译，到处运行”的概念，AWT 不得不通过牺牲功能来实现其平台无关性，也就是说，AWT 所提供的图形功能是各种通用型操作系统所提供的图形功能的交集。由于AWT 是依靠本地方法来实现其功能的，我们通常把AWT控件称为重量级控件。</p>
 <p>Swing ：是所谓的Lightweight组件，不是通过native方法来实现的，所以Swing的窗口风格更多样化。但是,Swing里面也有heaveyweight组件。比如JWindow，Dialog,JFrame</p>
 <p>Swing是所谓的Lightweight组件，不是通过native方法来实现的，所以Swing的窗口风格更多样化。但是,Swing里面也有heaveyweight组件。比如JWindow，Dialog,JFrame</p>
 <p>Swing由纯Java写成，可移植性好，外观在不同平台上相同。所以Swing部件称为轻量级组件（ Swing是由纯JAVA CODE所写的，因此SWING解决了JAVA因窗口类而无法跨平台的问题，使窗口功能也具有跨平台与延展性的特性，而且SWING不需占有太多系统资源，因此称为轻量级组件！！！）</p>
+<hr>
 <h1 id="3-sleep和wait的区别"><a href="#3-sleep和wait的区别" class="headerlink" title="3 sleep和wait的区别"></a>3 sleep和wait的区别</h1><p>Java中的多线程是一种抢占式的机制，而不是分时机制。抢占式的机制是有多个线程处于可运行状态，但是只有一个线程在运行。<br><strong>共同点</strong> <strong>：</strong><br>1. 他们都是在多线程的环境下，都可以在程序的调用处阻塞指定的毫秒数，并返回。<br>2. wait()和sleep()都可以通过interrupt()方法 打断线程的暂停状态 ，从而使线程立刻抛出InterruptedException。<br>如果线程A希望立即结束线程B，则可以对线程B对应的Thread实例调用interrupt方法。如果此刻线程B正在wait/sleep/join，则线程B会立刻抛出InterruptedException，在catch() {} 中直接return即可安全地结束线程。<br>需要注意的是，InterruptedException是线程自己从内部抛出的，并不是interrupt()方法抛出的。对某一线程调用 interrupt()时，如果该线程正在执行普通的代码，那么该线程根本就不会抛出InterruptedException。但是，一旦该线程进入到 wait()/sleep()/join()后，就会立刻抛出InterruptedException 。<br><strong>不同点</strong> <strong>：</strong><br> 1.每个对象都有一个锁来控制同步访问。Synchronized关键字可以和对象的锁交互，来实现线程的同步。<br>sleep方法没有释放锁，而wait方法释放了锁，使得其他线程可以使用同步控制块或者方法。<br>2.wait，notify和notifyAll只能在同步控制方法或者同步控制块里面使用，而sleep可以在任何地方使用<br>3.sleep必须捕获异常，而wait，notify和notifyAll不需要捕获异常 </p>
 <p>4.sleep是线程类（Thread）的方法，导致此线程暂停执行指定时间，给执行机会给其他线程，但是监控状态依然保持，到时后会自动恢复。调用sleep不会释放对象锁。</p>
 <p>5.wait是Object类的方法，对此对象调用wait方法导致本线程放弃对象锁，进入等待此对象的等待锁定池，只有针对此对象发出notify方法（或notifyAll）后本线程才进入对象锁定池准备获得对象锁进入运行状态。</p>
+<hr>
 <h1 id="4-在jdk1-5的环境下，有如下4条语句："><a href="#4-在jdk1-5的环境下，有如下4条语句：" class="headerlink" title="4 在jdk1.5的环境下，有如下4条语句："></a>4 在jdk1.5的环境下，有如下4条语句：</h1><p><code>Integer i01 = &quot;59&quot;;</code></p>
 <p><code>int</code> <code>i02 = &quot;59&quot;;</code></p>
 <p><code>Integer i03 =Integer.valueOf(&quot;59&quot;);</code></p>
@@ -469,9 +478,12 @@
 <p>所有只有i04是一个新对象，其他都是同一个对象。所有A，B选项为true</p>
 <p>C选项i03和i04是两个不同的对象，返回false</p>
 <p>D选项i02是基本数据类型，比较的时候比较的是数值，返回true</p>
+<hr>
 <h1 id="5-异常比较"><a href="#5-异常比较" class="headerlink" title="5 异常比较"></a>5 异常比较</h1><p><img src="java测试题/1.png" alt=""><br><strong>运行时异常： </strong>都是RuntimeException类及其子类异常，如NullPointerException(空指针异常)、IndexOutOfBoundsException(下标越界异常)等，这些异常是不检查异常，程序中可以选择捕获处理，也可以不处理。这些异常一般是由程序逻辑错误引起的，程序应该从逻辑角度尽可能避免这类异常的发生。</p>
 <p><strong>运行时异常的特点是Java编译器不会检查它，也就是说，当程序中可能出现这类异常，即使没有用try-catch语句捕获它，也没有用throws子句声明抛出它，也会编译通过。</strong> <strong>非运行时异常 （编译异常）： </strong>是RuntimeException以外的异常，类型上都属于Exception类及其子类。从程序语法角度讲是必须进行处理的异常，如果不处理，程序就不能编译通过。如IOException、SQLException等以及用户自定义的Exception异常，一般情况下不自定义检查异常。</p>
+<hr>
 <h1 id="6-strust2模型图"><a href="#6-strust2模型图" class="headerlink" title="6 strust2模型图"></a>6 strust2模型图</h1><p><img src="java测试题/2.png" alt=""></p>
+<hr>
 <h1 id="7-动态include与静态include"><a href="#7-动态include与静态include" class="headerlink" title="7 动态include与静态include"></a>7 动态include与静态include</h1><p>动态 INCLUDE 用 jsp:include 动作实现 &lt;jsp:include page=”included.jsp” flush=”true” /&gt; 它总是会检查所含文件中的变化 , 适合用于包含动态页面 , 并且可以带参数。各个文件分别先编译，然后组合成一个文件。 静态 INCLUDE 用 include 伪码实现 , 定不会检查所含文件的变化 , 适用于包含静态页面 &lt;%@ include file=”included.htm” %&gt; 。先将文件的代码被原封不动地加入到了主页面从而合成一个文件，然后再进行翻译，此时不允许有相同的变量。   </p>
 <p>以下是对 include 两种用法的区别 ， 主要有两个方面的不同 ;</p>
 <pre><code>一 : 执行时间上 :
@@ -487,7 +499,434 @@
 引入静态文本 (html,jsp), 在 JSP 页面被转化成 servlet 之前和它融和到一起 .
 
 &lt;jsp:include page=&quot;relativeURI&quot; flush=&quot;true&quot; /&gt; 引入执行页面或 servlet 所生成的应答文本
-</code></pre>
+</code></pre><hr>
+<h1 id="8-有如下一段代码，请选择其运行结果（）"><a href="#8-有如下一段代码，请选择其运行结果（）" class="headerlink" title="8 有如下一段代码，请选择其运行结果（）"></a>8 有如下一段代码，请选择其运行结果（）</h1><pre><code>public class StringDemo{
+    private static final String MESSAGE=&quot;taobao&quot;;
+    public static void main(String [] args) {
+        String a =&quot;tao&quot;+&quot;bao&quot;;
+        String b=&quot;tao&quot;;
+        String c=&quot;bao&quot;;
+        System.out.println(a==MESSAGE);
+        System.out.println((b+c)==MESSAGE);
+    }
+}
+</code></pre><p>对于这道题，考察的是对String类型的认识以及编译器优化。Java中String不是基本类型，但是有些时候和基本类型差不多，如String b = “tao” ; 可以对变量直接赋值，而不用 new 一个对象（当然也可以用 new）。所以String这个类型值得好好研究下。</p>
+<p>Java中的变量和基本类型的值存放于栈内存，而new出来的对象本身存放于堆内存，指向对象的引用还是存放在栈内存。例如如下的代码：</p>
+<pre><code>int  i=1;
+String s =  new  String( &quot;Hello World&quot;)
+</code></pre><p>变量i和s以及1存放在栈内存，而s指向的对象”Hello World”存放于堆内存。</p>
+<p><img src="java测试题/3.jpg" alt=""><br>  栈内存的一个特点是数据共享，这样设计是为了减小内存消耗，前面定义了i=1，i和1都在栈内存内，如果再定义一个j=1，此时将j放入栈内存，然后查找栈内存中是否有1，如果有则j指向1。如果再给j赋值2，则在栈内存中查找是否有2，如果没有就在栈内存中放一个2，然后j指向2。也就是如果常量在栈内存中，就将变量指向该常量，如果没有就在该栈内存增加一个该常量，并将变量指向该常量。<br><img src="java测试题/4.jpg" alt=""><br>  如果j++，这时指向的变量并不会改变，而是在栈内寻找新的常量（比原来的常量大1），如果栈内存有则指向它，如果没有就在栈内存中加入此常量并将j指向它。这种基本类型之间比较大小和我们逻辑上判断大小是一致的。如定义i和j是都赋值1，则i==j结果为true。==用于判断两个变量指向的地址是否一样。i==j就是判断i指向的1和j指向的1是同一个吗？当然是了。对于直接赋值的字符串常量（如String s=“Hello World”；中的Hello World）也是存放在栈内存中，而new出来的字符串对象（即String对象）是存放在堆内存中。如果定义String s=“Hello World”和String w=“Hello World”，s==w吗？肯定是true，因为他们指向的是同一个Hello World。<br><img src="java测试题/5.jpg" alt=""><br>堆内存没有数据共享的特点，前面定义的String s =  <strong>new</strong>  String( “Hello World” );后，变量s在栈内存内，Hello World 这个String对象在堆内存内。如果定义String w = <strong>new</strong>  String( “Hello World” );，则会在堆内存创建一个新的String对象，变量w存放在栈内存，w指向这个新的String对象。堆内存中不同对象（指同一类型的不同对象）的比较如果用==则结果肯定都是false，比如s==w？当然不等，s和w指向堆内存中不同的String对象。如果判断两个String对象相等呢？用equals方法。<br><img src="java测试题/6.jpg" alt=""><br>说了这么多只是说了这道题的铺垫知识，还没进入主题，下面分析这道题。 MESSAGE 成员变量及其指向的字符串常量肯定都是在栈内存里的，变量 a 运算完也是指向一个字符串“ taobao ”啊？是不是同一个呢？这涉及到编译器优化问题。对于字符串常量的相加，在编译时直接将字符串合并，而不是等到运行时再合并。也就是说</p>
+<p>String a =  “tao” + “bao” ;和String a =  “taobao” ;编译出的字节码是一样的。所以等到运行时，根据上面说的栈内存是数据共享原则，a和MESSAGE指向的是同一个字符串。而对于后面的(b+c)又是什么情况呢？b+c只能等到运行时才能判定是什么字符串，编译器不会优化，想想这也是有道理的，编译器怕你对b的值改变，所以编译器不会优化。运行时b+c计算出来的”taobao”和栈内存里已经有的”taobao”是一个吗？不是。b+c计算出来的”taobao”应该是放在堆内存中的String对象。这可以通过System. <em>out</em> .println( (b+c)==<em>MESSAGE</em> );的结果为false来证明这一点。如果计算出来的b+c也是在栈内存，那结果应该是true。Java对String的相加是通过StringBuffer实现的，先构造一个StringBuffer里面存放”tao”,然后调用append()方法追加”bao”，然后将值为”taobao”的StringBuffer转化成String对象。StringBuffer对象在堆内存中，那转换成的String对象理所应当的也是在堆内存中。下面改造一下这个语句System. <em>out</em>.println( (b+c).intern()== <em>MESSAGE</em> );结果是true， intern() 方法会先检查 String 池 ( 或者说成栈内存 ) 中是否存在相同的字符串常量，如果有就返回。所以 intern()返回的就是<em>MESSAGE</em>指向的”taobao”。再把变量b和c的定义改一下，<br><strong>final</strong>  String b =  “tao” ;</p>
+<pre><code>  **final**  String c =  &quot;bao&quot; ;
+
+System. _out_ .println( (b+c)== _MESSAGE_ );
+</code></pre><p>现在b和c不可能再次赋值了，所以编译器将b+c编译成了”taobao”。因此，这时的结果是true。</p>
+<p>&emsp;&emsp;在字符串相加中，只要有一个是非final类型的变量，编译器就不会优化，因为这样的变量可能发生改变，所以编译器不可能将这样的变量替换成常量。例如将变量b的final去掉，结果又变成了false。这也就意味着会用到StringBuffer对象，计算的结果在堆内存中。</p>
+<pre><code>如果对指向堆内存中的对象的String变量调用intern()会怎么样呢？实际上这个问题已经说过了，(b+c).intern()，b+c的结果就是在堆内存中。对于指向栈内存中字符串常量的变量调用intern()返回的还是它自己，没有多大意义。它会根据堆内存中对象的值，去查找String池中是否有相同的字符串，如果有就将变量指向这个string池中的变量。
+
+  String a = &quot;tao&quot;+&quot;bao&quot;;
+
+   String b = new String(&quot;taobao&quot;);
+
+  System.out.println(a==MESSAGE); //true
+
+  System.out.println(b==MESSAGE);  //false
+
+  b = b.intern();
+
+  System.out.println(b==MESSAGE); //true
+
+  System. _out_ .println(a==a.intern());  //true
+</code></pre><hr>
+<h1 id="9"><a href="#9" class="headerlink" title="9"></a>9</h1><p><code>static</code> <code>String str0=`</code>“0123456789”<code></code>;`</p>
+<p><code>static</code> <code>String str1=`</code>“0123456789”<code></code>;`</p>
+<p><code>String str2=str1.substring(`</code>5<code></code>);`</p>
+<p><code>String str3=`</code>new<code></code>String(str2);`</p>
+<p><code>String str4=`</code>new<code></code>String(str3.toCharArray());`</p>
+<p><code>str0=`</code>null<code></code>;`</p>
+<p>假定str0,…,str4后序代码都是只读引用。<br>Java 7中，以上述代码为基础，在发生过一次FullGC后，上述代码在Heap空间（不包括PermGen）保留的字符数为（）</p>
+<p>&emsp;&emsp;解析：这是一个关于java的垃圾回收机制的题目。垃圾回收主要针对的是堆区的回收，因为栈区的内存是随着线程而释放的。堆区分为三个区：年轻代（Young Generation）、年老代（Old Generation）、永久代（Permanent Generation，也就是方法区）。</p>
+<p> <strong>年轻代：</strong> 对象被创建时（new）的对象通常被放在Young（除了一些占据内存比较大的对象）,经过一定的Minor GC（针对年轻代的内存回收）还活着的对象会被移动到年老代（一些具体的移动细节省略）。</p>
+<p><strong>年老代：</strong> 就是上述年轻代移动过来的和一些比较大的对象。Minor GC(FullGC)是针对年老代的回收</p>
+<p><strong>永久代：</strong> 存储的是final常量，static变量，常量池。</p>
+<p>str3,str4都是直接new的对象，而substring的源代码其实也是new一个string对象返回，如下图：</p>
+<p>经过fullgc之后，年老区的内存回收，则年轻区的占了15个，不算PermGen。所以答案选C.</p>
+<hr>
+<h1 id="10-关于ThreadLocal类-以下说法正确的是"><a href="#10-关于ThreadLocal类-以下说法正确的是" class="headerlink" title="10 关于ThreadLocal类 以下说法正确的是"></a>10 关于ThreadLocal类 以下说法正确的是</h1><p>ThreadLocal继承自Thread</p>
+<p>ThreadLocal实现了Runnable接口</p>
+<p>ThreadLocal重要作用在于多线程间的数据共享</p>
+<p>ThreadLocal是采用哈希表的方式来为每个线程都提供一个变量的副本</p>
+<p>ThreadLocal保证各个线程间数据安全，每个线程的数据不会被另外线程访问和破坏</p>
+<p>&emsp;&emsp;1、ThreadLocal的类声明：</p>
+<p>public class ThreadLocal<t></t></p>
+<p>可以看出ThreadLocal并没有继承自Thread，也没有实现Runnable接口。所以AB都不对。</p>
+<p>2、ThreadLocal类为每一个线程都维护了自己独有的变量拷贝。每个线程都拥有了自己独立的一个变量。</p>
+<p>所以ThreadLocal重要作用并不在于多线程间的数据共享，<strong>而是数据的独立</strong>，C选项错。</p>
+<p>由于每个线程在访问该变量时，读取和修改的，都是自己独有的那一份变量拷贝，不会被其他线程访问，</p>
+<p>变量被彻底封闭在每个访问的线程中。所以E对。</p>
+<p>3、ThreadLocal中定义了一个<strong>哈希表</strong>用于为每个线程都提供一个变量的副本：</p>
+<p> static class ThreadLocalMap {</p>
+<pre><code>static class Entry extends WeakReference&lt;ThreadLocal&gt; {
+
+    /** The value associated with this ThreadLocal. */
+
+    Object value;
+
+    Entry(ThreadLocal k, Object v) {
+
+        super(k);
+
+        value = v;
+
+    }
+
+}
+
+/**
+
+ * The table, resized as necessary.
+
+ * table.length MUST always be a power of two.
+
+ */
+
+private Entry[] table;
+</code></pre><p>}</p>
+<p>所以D对。</p>
+<hr>
+<h1 id="11"><a href="#11" class="headerlink" title="11 |"></a>11 |</h1><p><code>public</code> <code>class</code> <code>NameList</code></p>
+<p><code>{</code></p>
+<p><code>private</code> <code>List names = `</code>new<code></code>ArrayList();`</p>
+<p><code>public</code> <code>synchronized</code> <code>void</code> <code>add(String name)</code></p>
+<p><code>{</code></p>
+<p><code>names.add(name);</code></p>
+<p><code>}</code></p>
+<p><code>public</code> <code>synchronized</code> <code>void</code> <code>printAll()     {</code></p>
+<p><code>for</code> <code>(`</code>int<code></code>i = <code>0</code>; i &lt; names.size(); i++)`</p>
+<p><code>{</code></p>
+<p><code>System.out.print(names.get(i) + ””);</code></p>
+<p><code>}</code></p>
+<p><code>}</code></p>
+<p><code>public</code> <code>static</code> <code>void</code> <code>main(String[]args)</code></p>
+<p><code>{</code></p>
+<p><code>final</code> <code>NameList sl = `</code>new<code></code>NameList();`</p>
+<p><code>for</code> <code>(`</code>int<code></code>i = <code>0</code>; i &lt; <code>2</code>; i++)`</p>
+<p><code>{</code></p>
+<p><code>new</code> <code>Thread()</code></p>
+<p><code>{</code></p>
+<p><code>public</code> <code>void</code> <code>run()</code></p>
+<p><code>{</code></p>
+<p><code>sl.add(“A”);</code></p>
+<p><code>sl.add(“B”);</code></p>
+<p><code>sl.add(“C”);</code></p>
+<p><code>sl.printAll();</code></p>
+<p><code>}</code></p>
+<p><code>} .start();</code></p>
+<p><code>}</code></p>
+<p><code>}</code></p>
+<p><code>}</code></p>
+<p>Which two statements are true if this class is compiled and run?</p>
+<p>在每个线程中都是顺序执行的，所以sl.printAll();必须在前三句执行之后执行，也就是输出的内容必有（连续或非连续的）ABC。</p>
+<p>而线程之间是穿插执行的，所以一个线程执行 sl.printAll();之前可能有另一个线程执行了前三句的前几句。</p>
+<p>E答案相当于线程1顺序执行完然后线程2顺序执行完。</p>
+<p>G答案则是线程1执行完前三句add之后线程2插一脚执行了一句add然后线程1再执行 sl.printAll();输出ABCA。接着线程2顺序执行完输出ABCABC</p>
+<p>输出加起来即为ABCAABCABC。</p>
+<hr>
+<h1 id="12-请问所有的异常类皆直接继承于哪一个类？（）"><a href="#12-请问所有的异常类皆直接继承于哪一个类？（）" class="headerlink" title="12 请问所有的异常类皆直接继承于哪一个类？（）"></a>12 请问所有的异常类皆直接继承于哪一个类？（）</h1><p><strong>Exception</strong></p>
+<p><img src="java测试题/7.jpg" alt=""><br><img src="java测试题/8.png" alt=""></p>
+<hr>
+<h1 id="13-java三大注解"><a href="#13-java三大注解" class="headerlink" title="13 java三大注解"></a>13 java三大注解</h1><p><strong>Override 注解</strong></p>
+<p>指明被注解的方法需要覆写超类中的方法.</p>
+<p>如果某个方法使用了该注解,却没有覆写超类中的方法(比如大小写写错了,或者参数错了,或者是子类自己定义的方法),编译器就会生成一个错误.</p>
+<p><strong>Deprecated 注解</strong></p>
+<p>可以修饰类、方法、变量，在java源码中被@Deprecated修饰的类、方法、变量等表示不建议使用的，可能会出现错误的，可能以后会被删除的类、方法等，如果现在使用，则在以后使用了这些类、方法的程序在更新新的JDK、jar包等就会出错，不再提供支持。     个人程序中的类、方法、变量用@Deprecated修饰同样是不希望自己和别人在以后的时间再次使用此类、方法。  当编译器编译时遇到了使用@Deprecated修饰的类、方法、变量时会提示相应的警告信息。</p>
+<p><strong>Suppresswarnings 注解</strong></p>
+<p>可以达到抑制编译器编译时产生警告的目的，但是很不建议使用@SuppressWarnings注解，使用此注解，编码人员看不到编译时编译器提示的相应的警告，不能选择更好、更新的类、方法或者不能编写更规范的编码。同时后期更新JDK、jar包等源码时，使用@SuppressWarnings注解的代码可能受新的JDK、jar包代码的支持，出现错误，仍然需要修改。</p>
+<p>抑制警告的关键字</p>
+<table>
+<thead>
+<tr>
+<th>关键字</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>all</td>
+<td>to suppress all warnings</td>
+</tr>
+<tr>
+<td>boxing</td>
+<td>to suppress warnings relative to boxing/unboxing operations</td>
+</tr>
+<tr>
+<td>cast</td>
+<td>to suppress warnings relative to cast operations</td>
+</tr>
+<tr>
+<td>dep-ann</td>
+<td>to suppress warnings relative to deprecated annotation</td>
+</tr>
+<tr>
+<td>deprecation</td>
+<td>to suppress warnings relative to deprecation</td>
+</tr>
+<tr>
+<td>fallthrough</td>
+<td>to suppress warnings relative to missing breaks in switch statements</td>
+</tr>
+<tr>
+<td>finally</td>
+<td>to suppress warnings relative to finally block that don’t return</td>
+</tr>
+<tr>
+<td>hiding</td>
+<td>to suppress warnings relative to locals that hide variable</td>
+</tr>
+<tr>
+<td>incomplete-switch</td>
+<td>to suppress warnings relative to missing entries in a switch statement (enum case)</td>
+</tr>
+<tr>
+<td>nls</td>
+<td>to suppress warnings relative to non-nls string literals</td>
+</tr>
+<tr>
+<td>null</td>
+<td>to suppress warnings relative to null analysis</td>
+</tr>
+<tr>
+<td>rawtypes</td>
+<td>to suppress warnings relative to un-specific types when using generics on class params</td>
+</tr>
+<tr>
+<td>restriction</td>
+<td>to suppress warnings relative to usage of discouraged or forbidden references</td>
+</tr>
+<tr>
+<td>serial</td>
+<td>to suppress warnings relative to missing serialVersionUID field for a serializable class</td>
+</tr>
+<tr>
+<td>static-access</td>
+<td>o suppress warnings relative to incorrect static access</td>
+</tr>
+<tr>
+<td>synthetic-access</td>
+<td>to suppress warnings relative to unoptimized access from inner classes</td>
+</tr>
+<tr>
+<td>unchecked</td>
+<td>to suppress warnings relative to unchecked operations</td>
+</tr>
+<tr>
+<td>unqualified-field-access</td>
+<td>to suppress warnings relative to field access unqualified</td>
+</tr>
+<tr>
+<td>unused</td>
+<td>to suppress warnings relative to unused code</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h1 id="14-访问权限"><a href="#14-访问权限" class="headerlink" title="14 访问权限"></a>14 访问权限</h1><table>
+<thead>
+<tr>
+<th>作用域</th>
+<th>当前类</th>
+<th>同一package</th>
+<th>子孙类</th>
+<th>其他package</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>public</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td>protected</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>×</td>
+</tr>
+<tr>
+<td>friendly</td>
+<td>√</td>
+<td>√</td>
+<td>×</td>
+<td>×</td>
+</tr>
+<tr>
+<td>private</td>
+<td>√</td>
+<td>×</td>
+<td>×</td>
+<td>×</td>
+</tr>
+</tbody>
+</table>
+<p>没有时默认为<strong>friendly</strong>，如构造函数等~</p>
+<hr>
+<h1 id="15-下面有关java-final的基本规则，描述错误的是？"><a href="#15-下面有关java-final的基本规则，描述错误的是？" class="headerlink" title="15 下面有关java final的基本规则，描述错误的是？"></a>15 下面有关java final的基本规则，描述错误的是？</h1><ul>
+<li><p>final修饰的类不能被继承</p>
+</li>
+<li><p>final修饰的成员变量只允许赋值一次，且只能在类方法赋值</p>
+</li>
+<li><p>final修饰的局部变量即为常量，只能赋值一次。</p>
+</li>
+<li><p>final修饰的方法不允许被子类覆盖</p>
+</li>
+</ul>
+<p>final修饰的成员变量为基本数据类型是，在赋值之后无法改变。当final修饰的成员变量为引用数据类型时，在赋值后其指向地址无法改变，但是对象内容还是可以改变的。</p>
+<p>final修饰的成员变量在赋值时可以有三种方式。1、在声明时直接赋值。2、在构造器中赋值。3、在初始代码块中进行赋值。</p>
+<hr>
+<h1 id="16-阅读以下-foo-函数，请问它的时间复杂度是："><a href="#16-阅读以下-foo-函数，请问它的时间复杂度是：" class="headerlink" title="16 阅读以下 foo 函数，请问它的时间复杂度是："></a>16 阅读以下 foo 函数，请问它的时间复杂度是：</h1><pre><code>int foo(intarray[], int n, int key)
+{
+int n1=0,n2=n-1,m;
+while(n1&lt;=n2)
+{
+    m=(n1+n2)/2;
+if(array[m]==key)
+  return m;
+if(array[m]&gt;key)
+  n2=m-1;
+else
+  n1=m+1;
+}
+return -1;
+}
+</code></pre><p><strong>一、时间复杂度</strong></p>
+<p>（1）时间频度 </p>
+<p>一个算法执行所耗费的时间，从理论上是不能算出来的，必须上机运行<a href="http://lib.csdn.net/base/softwaretest" target="_blank" rel="noopener">测试</a>才能知道。但我们不可能也没有必要对每个算法都上机测试，只需知道哪个算法花费的时间多，哪个算法花费的时间少就可以了。并且一个算法花费的时间与算法中语句的执行次数成正比例，哪个算法中语句执行次数多，它花费时间就多。一个算法中的语句执行次数称为语句频度或时间频度。记为T(n)。 （2）时间复杂度 </p>
+<p>在刚才提到的时间频度中，n称为问题的规模，当n不断变化时，时间频度T(n)也会不断变化。但有时我们想知道它变化时呈现什么规律。为此，我们引入时间复杂度概念。 </p>
+<p>一般情况下，算法中基本操作重复执行的次数是问题规模n的某个函数，用T(n)表示，若有某个辅助函数f(n),使得当n趋近于无穷大时，T（n)/f(n)的极限值为不等于零的常数，则称f(n)是T(n)的同数量级函数。记作T(n)=O(f(n)),称O(f(n)) 为算法的渐进时间复杂度，简称时间复杂度。 </p>
+<p>在各种不同算法中，若算法中语句执行次数为一个常数，则时间复杂度为O(1),另外，在时间频度不相同时，时间复杂度有可能相同，如T(n)=n2+3n+4与T(n)=4n2+2n+1它们的频度不同，但时间复杂度相同，都为O(n2)。 </p>
+<p>按数量级递增排列，常见的时间复杂度有： </p>
+<p>常数阶O(1),对数阶O(log2n),线性阶O(n), </p>
+<p>线性对数阶O(nlog2n),平方阶O(n2)，立方阶O(n3),…， </p>
+<p>k次方阶O(nk),指数阶O(2n)。随着问题规模n的不断增大，上述时间复杂度不断增大，算法的执行效率越低。 </p>
+<p>2、空间复杂度 </p>
+<p>与时间复杂度类似，空间复杂度是指算法在计算机内执行时所需存储空间的度量。记作: </p>
+<p>S(n)=O(f(n)) </p>
+<p>我们一般所讨论的是除正常占用内存开销外的辅助存储单元规模</p>
+<p><strong>二、常见算法时间复杂度：</strong></p>
+<p>O(1): 表示算法的运行时间为常量</p>
+<p>O(n): 表示该算法是线性算法</p>
+<p>O(㏒2n): 二分查找算法</p>
+<p>O(n2): 对数组进行排序的各种简单算法，例如直接插入排序的算法。</p>
+<p>O(n3): 做两个n阶矩阵的乘法运算</p>
+<p>O(2n): 求具有n个元素集合的所有子集的算法</p>
+<p>O(n!): 求具有N个元素的全排列的算法</p>
+<p>优&lt;—————————&lt;劣</p>
+<p>O(1)&lt;O(㏒2n)&lt;O(n)&lt;O(n2)&lt;O(2n)</p>
+<p>时间复杂度按数量级递增排列依次为：常数阶O(1)、对数阶O(log2n)、线性阶O(n)、线性对数阶O(nlog2n)、平方阶O(n2)、立方阶O(n3)、……k次方阶O(nk)、指数阶O(2n)。</p>
+<p><strong>三、算法的时间复杂度（计算实例)</strong></p>
+<p>定义：如果一个问题的规模是n，解这一问题的某一算法所需要的时间为T(n)，它是n的某一函数 T(n)称为这一算法的“时间复杂性”。</p>
+<p>当输入量n逐渐加大时，时间复杂性的极限情形称为算法的“渐近时间复杂性”。</p>
+<p>我们常用大O表示法表示时间复杂性，注意它是某一个算法的时间复杂性。大O表示只是说有上界，由定义如果f(n)=O(n)，那显然成立f(n)=O(n^2)，它给你一个上界，但并不是上确界，但人们在表示的时候一般都习惯表示前者。</p>
+<p>此外，一个问题本身也有它的复杂性，如果某个算法的复杂性到达了这个问题复杂性的下界，那就称这样的算法是最佳算法。</p>
+<p>“大O记法”：在这种描述中使用的基本参数是 n，即问题实例的规模，把复杂性或运行时间表达为n的函数。这里的“O”表示量级 (order)，比如说“二分检索是 O(logn)的”,也就是说它需要“通过logn量级的步骤去检索一个规模为n的数组”记法 O ( f(n) )表示当 n增大时，运行时间至多将以正比于 f(n)的速度增长。</p>
+<p>这种渐进估计对算法的理论分析和大致比较是非常有价值的，但在实践中细节也可能造成差异。例如，一个低附加代价的O(n2)算法在n较小的情况下可能比一个高附加代价的 O(nlogn)算法运行得更快。当然，随着n足够大以后，具有较慢上升函数的算法必然工作得更快。</p>
+<p>O(1)</p>
+<p>Temp=i;i=j;j=temp;                    </p>
+<p>以上三条单个语句的频度均为1，该程序段的执行时间是一个与问题规模n无关的常数。算法的时间复杂度为常数阶，记作T(n)=O(1)。如果算法的执行时 间不随着问题规模n的增加而增长，即使算法中有上千条语句，其执行时间也不过是一个较大的常数。此类算法的时间复杂度是O(1)。</p>
+<p>O(n^2)</p>
+<p>2.1. 交换i和j的内容</p>
+<pre><code>sum=0；                 （一次）
+
+for(i=1;i&lt;=n;i++)       （n次 ）
+
+   for(j=1;j&lt;=n;j++) （n^2次 ）
+
+    sum++；       （n^2次 ）
+</code></pre><p>解：T(n)=2n^2+n+1 =O(n^2)</p>
+<p>2.2.   </p>
+<pre><code>for (i=1;i&lt;n;i++)
+
+{
+
+    y=y+1;         ①   
+
+    for (j=0;j&lt;=(2*n);j++)    
+
+       x++;        ②      
+
+}         
+</code></pre><p>解： 语句1的频度是n-1</p>
+<pre><code>语句2的频度是(n-1)*(2n+1)=2n^2-n-1
+
+f(n)=2n^2-n-1+(n-1)=2n^2-2
+
+该程序的时间复杂度T(n)=O(n^2).         
+</code></pre><p>O(n)      </p>
+<p>2.3.</p>
+<pre><code>a=0;
+
+b=1;                      ①
+
+for (i=1;i&lt;=n;i++) ②
+
+{  
+
+   s=a+b;　　　　③
+
+   b=a;　　　　　④  
+
+   a=s;　　　　　⑤
+
+}
+</code></pre><p>解： 语句1的频度：2,        </p>
+<pre><code> 语句2的频度： n,        
+
+语句3的频度： n-1,        
+
+语句4的频度：n-1,    
+
+语句5的频度：n-1,                                  
+
+T(n)=2+n+3(n-1)=4n-1=O(n).
+</code></pre><p>O(log2n )</p>
+<p>2.4.</p>
+<pre><code> i=1;       ①
+
+while (i&lt;=n)
+
+   i=i*2; ②
+</code></pre><p>解： 语句1的频度是1,  </p>
+<pre><code>设语句2的频度是f(n),   则：2^f(n)&lt;=n;f(n)&lt;=log2n    
+
+取最大值f(n)= log2n,
+
+T(n)=O(log2n )
+</code></pre><p>O(n^3)</p>
+<p>2.5.</p>
+<pre><code>for(i=0;i&lt;n;i++)
+
+{  
+
+   for(j=0;j&lt;i;j++)  
+
+   {
+
+      for(k=0;k&lt;j;k++)
+
+         x=x+2;  
+
+   }
+
+}
+</code></pre><p>解：当i=m, j=k的时候,内层循环的次数为k当i=m时, j 可以取 0,1,…,m-1 , 所以这里最内循环共进行了0+1+…+m-1=(m-1)m/2次所以,i从0取到n, 则循环共进行了: 0+(1-1)*1/2+…+(n-1)n/2=n(n+1)(n-1)/6所以时间复杂度为O(n^3).</p>
+<p>我们还应该区分算法的最坏情况的行为和期望行为。如快速排序的最 坏情况运行时间是 O(n^2)，但期望时间是 O(nlogn)。通过每次都仔细 地选择基准值，我们有可能把平方情况 (即O(n^2)情况)的概率减小到几乎等于 0。在实际中，精心实现的快速排序一般都能以 (O(nlogn)时间运行。</p>
+<p>下面是一些常用的记法：</p>
+<p>访问数组中的元素是常数时间操作，或说O(1)操作。一个算法如 果能在每个步骤去掉一半数据元素，如二分检索，通常它就取 O(logn)时间。用strcmp比较两个具有n个字符的串需要O(n)时间 。常规的矩阵乘算法是O(n^3)，因为算出每个元素都需要将n对 元素相乘并加到一起，所有元素的个数是n^2。</p>
+<p>指数时间算法通常来源于需要求出所有可能结果。例如，n个元 素的集合共有2n个子集,所以要求出所有子集的算法将是O(2n)的 。指数算法一般说来是太复杂了，除非n的值非常小，因为，在 这个问题中增加一个元素就导致运行时间加倍。不幸的是，确实有许多问题 (如著名 的“巡回售货员问题” )，到目前为止找到的算法都是指数的。如果我们真的遇到这种情况， 通常应该用寻找近似最佳结果的算法替代之。</p>
+
       
     </div>
     
@@ -718,7 +1157,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-struts1和struts2的区别"><span class="nav-number">1.</span> <span class="nav-text">1.struts1和struts2的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Swing与AWT的区别"><span class="nav-number">2.</span> <span class="nav-text">2 Swing与AWT的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-sleep和wait的区别"><span class="nav-number">3.</span> <span class="nav-text">3 sleep和wait的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-在jdk1-5的环境下，有如下4条语句："><span class="nav-number">4.</span> <span class="nav-text">4 在jdk1.5的环境下，有如下4条语句：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-异常比较"><span class="nav-number">5.</span> <span class="nav-text">5 异常比较</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-strust2模型图"><span class="nav-number">6.</span> <span class="nav-text">6 strust2模型图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-动态include与静态include"><span class="nav-number">7.</span> <span class="nav-text">7 动态include与静态include</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-struts1和struts2的区别"><span class="nav-number">1.</span> <span class="nav-text">1.struts1和struts2的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Swing与AWT的区别"><span class="nav-number">2.</span> <span class="nav-text">2 Swing与AWT的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-sleep和wait的区别"><span class="nav-number">3.</span> <span class="nav-text">3 sleep和wait的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-在jdk1-5的环境下，有如下4条语句："><span class="nav-number">4.</span> <span class="nav-text">4 在jdk1.5的环境下，有如下4条语句：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-异常比较"><span class="nav-number">5.</span> <span class="nav-text">5 异常比较</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-strust2模型图"><span class="nav-number">6.</span> <span class="nav-text">6 strust2模型图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-动态include与静态include"><span class="nav-number">7.</span> <span class="nav-text">7 动态include与静态include</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8-有如下一段代码，请选择其运行结果（）"><span class="nav-number">8.</span> <span class="nav-text">8 有如下一段代码，请选择其运行结果（）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9"><span class="nav-number">9.</span> <span class="nav-text">9</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#10-关于ThreadLocal类-以下说法正确的是"><span class="nav-number">10.</span> <span class="nav-text">10 关于ThreadLocal类 以下说法正确的是</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#11"><span class="nav-number">11.</span> <span class="nav-text">11 |</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#12-请问所有的异常类皆直接继承于哪一个类？（）"><span class="nav-number">12.</span> <span class="nav-text">12 请问所有的异常类皆直接继承于哪一个类？（）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#13-java三大注解"><span class="nav-number">13.</span> <span class="nav-text">13 java三大注解</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#14-访问权限"><span class="nav-number">14.</span> <span class="nav-text">14 访问权限</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#15-下面有关java-final的基本规则，描述错误的是？"><span class="nav-number">15.</span> <span class="nav-text">15 下面有关java final的基本规则，描述错误的是？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#16-阅读以下-foo-函数，请问它的时间复杂度是："><span class="nav-number">16.</span> <span class="nav-text">16 阅读以下 foo 函数，请问它的时间复杂度是：</span></a></li></ol></div>
             
 
           </div>
