@@ -99,7 +99,7 @@
 <meta property="og:image" content="http://yoursite.com/2018/07/18/java测试题/java测试题/8.png">
 <meta property="og:image" content="http://yoursite.com/2018/07/18/java测试题/java测试题/9.png">
 <meta property="og:image" content="https://uploadfiles.nowcoder.net/images/20160722/579609_1469158660593_072774B6B658B3603E1AA7198722775C">
-<meta property="og:updated_time" content="2018-07-28T13:41:29.196Z">
+<meta property="og:updated_time" content="2018-08-13T12:28:15.452Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java测试题">
 <meta name="twitter:description" content="1.struts1和struts2的区别从action类上分析:1.Struts1要求Action类继承一个抽象基类。Struts1的一个普遍问题是使用抽象类编程而不是接口。2. Struts 2 Action类可以实现一个Action接口，也可实现其他接口，使可选和定制的服务成为可能。Struts2提供一个ActionSupport基类去实现常用的接口。Action接口不是必须的，任何有exec">
@@ -993,6 +993,88 @@ public static void main(String[]args){
 <p><strong><img src="https://uploadfiles.nowcoder.net/images/20160722/579609_1469158660593_072774B6B658B3603E1AA7198722775C" alt=""></strong> </p>
 <p><strong>所以可以知道是返回当前运行时的类。</strong></p>
 <p><strong>2.在调用getName()方法而getName()是：包名+类名</strong></p>
+<hr>
+<h1 id="25-hashMap与hashTable"><a href="#25-hashMap与hashTable" class="headerlink" title="25 hashMap与hashTable"></a>25 hashMap与hashTable</h1><ol>
+<li><strong>关于HashMap的一些说法：</strong></li>
+</ol>
+<p>a)  <strong>HashMap实际上是一个“链表散列”的数据结构，即数组和链表的结合体。HashMap的底层结构是一个数组，数组中的每一项是一条链表。</strong></p>
+<p>b)  <strong>HashMap的实例有俩个参数影响其性能： “初始容量” 和 装填因子。</strong></p>
+<p>c)  <strong>HashMap实现不同步，线程不安全。  HashTable线程安全</strong></p>
+<p>d)  <strong>HashMap中的key-value都是存储在Entry中的。</strong></p>
+<p>e)  <strong>HashMap可以存null键和null值，不保证元素的顺序恒久不变，它的底层使用的是数组和链表，通过hashCode()方法和equals方法保证键的唯一性</strong></p>
+<p>f)  <strong>解决冲突主要有三种方法：定址法，拉链法，再散列法。HashMap是采用拉链法解决哈希冲突的。</strong></p>
+<p><strong>注： 链表法是将相同hash值的对象组成一个链表放在hash值对应的槽位；</strong></p>
+<p><strong>用开放定址法解决冲突的做法是：当冲突发生时，使用某种探查(亦称探测)技术在散列表中形成一个探查(测)序列。 沿此序列逐个单元地查找，直到找到给定 的关键字，或者碰到一个开放的地址(即该地址单元为空)为止（若要插入，在探查到开放的地址，则可将待插入的新结点存人该地址单元）。</strong></p>
+<p><strong>拉链法解决冲突的做法是： 将所有关键字为同义词的结点链接在同一个单链表中 。若选定的散列表长度为m，则可将散列表定义为一个由m个头指针组成的指针数 组T[0..m-1]。凡是散列地址为i的结点，均插入到以T[i]为头指针的单链表中。T中各分量的初值均应为空指针。在拉链法中，装填因子α可以大于1，但一般均取α≤1。拉链法适合未规定元素的大小。</strong></p>
+<ol start="2">
+<li><strong>Hashtable和HashMap的区别：</strong></li>
+</ol>
+<p>a)  <strong> 继承不同。</strong></p>
+<p><strong> public class Hashtable extends Dictionary implements Map</strong></p>
+<p><strong>public class HashMap extends  AbstractMap implements Map</strong></p>
+<p>b)  <strong>Hashtable中的方法是同步的，而HashMap中的方法在缺省情况下是非同步的。在多线程并发的环境下，可以直接使用Hashtable，但是要使用HashMap的话就要自己增加同步处理了。</strong></p>
+<p>c)  <strong>Hashtable 中，key和value 都不允许出现 null 值。 在 HashMap 中，null 可以作为键，这样的键只有一个；可以有一个或多个键所对应的值为 null 。当 get() 方法返回 null 值时，即可以表示 HashMap 中没有该键，也可以表示该键所对应的值为 null 。因此，在 HashMap 中不能由 get() 方法来判断HashMap 中是否存在某个键， 而应该用 containsKey() 方法来判断。</strong></p>
+<p>d)  <strong>两个遍历方式的内部实现上不同。Hashtable、HashMap都使用了Iterator。而由于历史原因，Hashtable还使用了Enumeration的方式 。</strong></p>
+<p>e)  <strong>哈希值的使用不同，HashTable直接使用对象的hashCode。而HashMap重新计算hash值。</strong></p>
+<p>f)  <strong>Hashtable和HashMap它们两个内部实现方式的数组的初始大小和扩容的方式。HashTable中hash数组默认大小是11，增加的方式是old*2+1。HashMap中hash数组的默认大小是16，而且一定是2的指数。</strong></p>
+<p><strong>注：  HashSet子类依靠hashCode()和equal()方法来区分重复元素。</strong></p>
+<p><strong>HashSet内部使用Map保存数据，即将HashSet的数据作为Map的key值保存，这也是HashSet中元素不能重复的原因。而Map中保存key值的,会去判断当前Map中是否含有该Key对象，内部是先通过key的hashCode,确定有相同的hashCode之后，再通过equals方法判断是否相同。</strong></p>
+<hr>
+<h1 id="26-如果int-x-20-y-5，则语句System-out-println-x-y-””-x-y-y-的输出结果是（）"><a href="#26-如果int-x-20-y-5，则语句System-out-println-x-y-””-x-y-y-的输出结果是（）" class="headerlink" title="26 如果int x=20, y=5，则语句System.out.println(x+y +””+(x+y)+y);  的输出结果是（）"></a>26 如果int x=20, y=5，则语句System.out.println(x+y +””+(x+y)+y);  的输出结果是（）</h1><p>1）不论有什么运算，小括号的优先级都是最高的，先计算小括号中的运算，得到x+y +””+25+y</p>
+<p>2）任何字符与字符串相加都是字符串，但是是有顺序的，字符串前面的按原来的格式相加，字符串后面的都按字符串相加，得到25+“”+25+5</p>
+<p>3）上面的结果按字符串相加得到2525</p>
+<hr>
+<h1 id="27-有关hashMap跟hashTable的区别，说法正确的是？"><a href="#27-有关hashMap跟hashTable的区别，说法正确的是？" class="headerlink" title="27 有关hashMap跟hashTable的区别，说法正确的是？"></a>27 有关hashMap跟hashTable的区别，说法正确的是？</h1><ul>
+<li><p>HashMap和Hashtable都实现了Map接口</p>
+</li>
+<li><p>HashMap是非synchronized，而Hashtable是synchronized</p>
+</li>
+<li><p>HashTable使用Enumeration，HashMap使用Iterator</p>
+</li>
+<li><p>Hashtable直接使用对象的hashCode，HashMap重新计算hash值，而且用与代替求模</p>
+</li>
+</ul>
+<p>答案：ABCD<br>HashTable和HashMap区别</p>
+<p>①继承不同。</p>
+<pre><code>public class Hashtable extends Dictionary implements Map     
+public class HashMap extends AbstractMap implements Map
+</code></pre><p>②</p>
+<p>Hashtable 中的方法是同步的，而HashMap中的方法在缺省情况下是非同步的。在多线程并发的环境下，可以直接使用Hashtable，但是要使用HashMap的话就要自己增加同步处理了。</p>
+<p>③</p>
+<p>Hashtable中，key和value都不允许出现null值。</p>
+<p>在HashMap中，null可以作为键，这样的键只有一个；可以有一个或多个键所对应的值为null。当get()方法返回null值时，即可以表示 HashMap中没有该键，也可以表示该键所对应的值为null。因此，在HashMap中不能由get()方法来判断HashMap中是否存在某个键， 而应该用containsKey()方法来判断。</p>
+<p>④两个遍历方式的内部实现上不同。</p>
+<p>Hashtable、HashMap都使用了 Iterator。而由于历史原因，Hashtable还使用了Enumeration的方式 。</p>
+<p>⑤</p>
+<p>哈希值的使用不同，HashTable直接使用对象的hashCode。而HashMap重新计算hash值。</p>
+<p>⑥</p>
+<p>Hashtable和HashMap它们两个内部实现方式的数组的初始大小和扩容的方式。HashTable中hash数组默认大小是11，增加的方式是 old*2+1。HashMap中hash数组的默认大小是16，而且一定是2的指数。</p>
+<hr>
+<h1 id="28-如下代码的输出结果是什么？"><a href="#28-如下代码的输出结果是什么？" class="headerlink" title="28 如下代码的输出结果是什么？"></a>28 如下代码的输出结果是什么？</h1><pre><code>public class Test {     
+    public int aMethod(){         
+        static int i = 0;          
+        i++;         
+        return i;      
+    } 
+    public static void main(String args[]){     
+        Test test = new Test();     
+        test.aMethod();     
+        int j = test.aMethod();     
+        System.out.println(j);     
+    } 
+}
+</code></pre><ul>
+<li><p>0</p>
+</li>
+<li><p>1</p>
+</li>
+<li><p>2</p>
+</li>
+<li><p>编译失败</p>
+</li>
+</ul>
+<p>答案：D</p>
+<p><em>静态变量只能在类主体中定义，不能在方法中定义</em></p>
 
       
     </div>
@@ -1144,7 +1226,7 @@ public static void main(String[]args){
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1155,7 +1237,7 @@ public static void main(String[]args){
               
               <div class="site-state-item site-state-categories">
                 
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">分类</span>
                 
               </div>
@@ -1166,7 +1248,7 @@ public static void main(String[]args){
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
@@ -1228,7 +1310,7 @@ public static void main(String[]args){
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-struts1和struts2的区别"><span class="nav-number">1.</span> <span class="nav-text">1.struts1和struts2的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Swing与AWT的区别"><span class="nav-number">2.</span> <span class="nav-text">2 Swing与AWT的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-sleep和wait的区别"><span class="nav-number">3.</span> <span class="nav-text">3 sleep和wait的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-在jdk1-5的环境下，有如下4条语句："><span class="nav-number">4.</span> <span class="nav-text">4 在jdk1.5的环境下，有如下4条语句：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-异常比较"><span class="nav-number">5.</span> <span class="nav-text">5 异常比较</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-strust2模型图"><span class="nav-number">6.</span> <span class="nav-text">6 strust2模型图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-动态include与静态include"><span class="nav-number">7.</span> <span class="nav-text">7 动态include与静态include</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8-有如下一段代码，请选择其运行结果（）"><span class="nav-number">8.</span> <span class="nav-text">8 有如下一段代码，请选择其运行结果（）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9"><span class="nav-number">9.</span> <span class="nav-text">9</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#10-关于ThreadLocal类-以下说法正确的是"><span class="nav-number">10.</span> <span class="nav-text">10 关于ThreadLocal类 以下说法正确的是</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#11"><span class="nav-number">11.</span> <span class="nav-text">11 |</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#12-请问所有的异常类皆直接继承于哪一个类？（）"><span class="nav-number">12.</span> <span class="nav-text">12 请问所有的异常类皆直接继承于哪一个类？（）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#13-java三大注解"><span class="nav-number">13.</span> <span class="nav-text">13 java三大注解</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#14-访问权限"><span class="nav-number">14.</span> <span class="nav-text">14 访问权限</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#15-下面有关java-final的基本规则，描述错误的是？"><span class="nav-number">15.</span> <span class="nav-text">15 下面有关java final的基本规则，描述错误的是？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#16-阅读以下-foo-函数，请问它的时间复杂度是："><span class="nav-number">16.</span> <span class="nav-text">16 阅读以下 foo 函数，请问它的时间复杂度是：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#17-Java中的volatile关键字的功能"><span class="nav-number">17.</span> <span class="nav-text">17 Java中的volatile关键字的功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#18-JAVA语言的下面几种数组复制方法中，哪个效率最高？"><span class="nav-number">18.</span> <span class="nav-text">18 JAVA语言的下面几种数组复制方法中，哪个效率最高？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#19-Java程序的种类有（-）"><span class="nav-number">19.</span> <span class="nav-text">19 Java程序的种类有（ ）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#20-截止JDK1-8版本-java并发框架支持锁包括"><span class="nav-number">20.</span> <span class="nav-text">20 截止JDK1.8版本,java并发框架支持锁包括?</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Java锁的种类以及辨析-锁作为并发共享数据，保证一致性的工具，在JAVA平台有多种实现-如-synchronized-和-ReentrantLock等等-。这些已经写好提供的锁为我们开发提供了便利，但是锁的具体性质以及类型却很少被提及。本系列文章将分析JAVA中常见的锁以及其特性，为大家答疑解惑。"><span class="nav-number">20.0.1.</span> <span class="nav-text">Java锁的种类以及辨析 锁作为并发共享数据，保证一致性的工具，在JAVA平台有多种实现(如 synchronized 和 ReentrantLock等等 ) 。这些已经写好提供的锁为我们开发提供了便利，但是锁的具体性质以及类型却很少被提及。本系列文章将分析JAVA中常见的锁以及其特性，为大家答疑解惑。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1、自旋锁"><span class="nav-number">20.0.2.</span> <span class="nav-text">1、自旋锁</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、自旋锁的其他种类"><span class="nav-number">20.0.3.</span> <span class="nav-text">2、自旋锁的其他种类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、阻塞锁"><span class="nav-number">20.0.4.</span> <span class="nav-text">3、阻塞锁</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、可重入锁"><span class="nav-number">20.0.5.</span> <span class="nav-text">4、可重入锁</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5、读写锁"><span class="nav-number">20.0.6.</span> <span class="nav-text">5、读写锁</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6、互斥锁"><span class="nav-number">20.0.7.</span> <span class="nav-text">6、互斥锁</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7、悲观锁"><span class="nav-number">20.0.8.</span> <span class="nav-text">7、悲观锁</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8、乐观锁"><span class="nav-number">20.0.9.</span> <span class="nav-text">8、乐观锁</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9、公平锁"><span class="nav-number">20.0.10.</span> <span class="nav-text">9、公平锁</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10、非公平锁"><span class="nav-number">20.0.11.</span> <span class="nav-text">10、非公平锁</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11、偏向锁"><span class="nav-number">20.0.12.</span> <span class="nav-text">11、偏向锁</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12、对象锁"><span class="nav-number">20.0.13.</span> <span class="nav-text">12、对象锁</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13、线程锁"><span class="nav-number">20.0.14.</span> <span class="nav-text">13、线程锁</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#14、锁粗化"><span class="nav-number">20.0.15.</span> <span class="nav-text">14、锁粗化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#15、轻量级锁"><span class="nav-number">20.0.16.</span> <span class="nav-text">15、轻量级锁</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#16、锁消除"><span class="nav-number">20.0.17.</span> <span class="nav-text">16、锁消除</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#17、锁膨胀"><span class="nav-number">20.0.18.</span> <span class="nav-text">17、锁膨胀</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#18、信号量"><span class="nav-number">20.0.19.</span> <span class="nav-text">18、信号量</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#21-下面程序输出为"><span class="nav-number">21.</span> <span class="nav-text">21 下面程序输出为</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#22-重写"><span class="nav-number">22.</span> <span class="nav-text">22 重写</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#23-下面哪项技术可以用在WEB开发中实现会话跟踪实现？"><span class="nav-number">23.</span> <span class="nav-text">23  下面哪项技术可以用在WEB开发中实现会话跟踪实现？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#24-说明输出结果。"><span class="nav-number">24.</span> <span class="nav-text">24 说明输出结果。</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-struts1和struts2的区别"><span class="nav-number">1.</span> <span class="nav-text">1.struts1和struts2的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Swing与AWT的区别"><span class="nav-number">2.</span> <span class="nav-text">2 Swing与AWT的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-sleep和wait的区别"><span class="nav-number">3.</span> <span class="nav-text">3 sleep和wait的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-在jdk1-5的环境下，有如下4条语句："><span class="nav-number">4.</span> <span class="nav-text">4 在jdk1.5的环境下，有如下4条语句：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-异常比较"><span class="nav-number">5.</span> <span class="nav-text">5 异常比较</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-strust2模型图"><span class="nav-number">6.</span> <span class="nav-text">6 strust2模型图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-动态include与静态include"><span class="nav-number">7.</span> <span class="nav-text">7 动态include与静态include</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8-有如下一段代码，请选择其运行结果（）"><span class="nav-number">8.</span> <span class="nav-text">8 有如下一段代码，请选择其运行结果（）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9"><span class="nav-number">9.</span> <span class="nav-text">9</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#10-关于ThreadLocal类-以下说法正确的是"><span class="nav-number">10.</span> <span class="nav-text">10 关于ThreadLocal类 以下说法正确的是</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#11"><span class="nav-number">11.</span> <span class="nav-text">11 |</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#12-请问所有的异常类皆直接继承于哪一个类？（）"><span class="nav-number">12.</span> <span class="nav-text">12 请问所有的异常类皆直接继承于哪一个类？（）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#13-java三大注解"><span class="nav-number">13.</span> <span class="nav-text">13 java三大注解</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#14-访问权限"><span class="nav-number">14.</span> <span class="nav-text">14 访问权限</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#15-下面有关java-final的基本规则，描述错误的是？"><span class="nav-number">15.</span> <span class="nav-text">15 下面有关java final的基本规则，描述错误的是？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#16-阅读以下-foo-函数，请问它的时间复杂度是："><span class="nav-number">16.</span> <span class="nav-text">16 阅读以下 foo 函数，请问它的时间复杂度是：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#17-Java中的volatile关键字的功能"><span class="nav-number">17.</span> <span class="nav-text">17 Java中的volatile关键字的功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#18-JAVA语言的下面几种数组复制方法中，哪个效率最高？"><span class="nav-number">18.</span> <span class="nav-text">18 JAVA语言的下面几种数组复制方法中，哪个效率最高？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#19-Java程序的种类有（-）"><span class="nav-number">19.</span> <span class="nav-text">19 Java程序的种类有（ ）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#20-截止JDK1-8版本-java并发框架支持锁包括"><span class="nav-number">20.</span> <span class="nav-text">20 截止JDK1.8版本,java并发框架支持锁包括?</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Java锁的种类以及辨析-锁作为并发共享数据，保证一致性的工具，在JAVA平台有多种实现-如-synchronized-和-ReentrantLock等等-。这些已经写好提供的锁为我们开发提供了便利，但是锁的具体性质以及类型却很少被提及。本系列文章将分析JAVA中常见的锁以及其特性，为大家答疑解惑。"><span class="nav-number">20.0.1.</span> <span class="nav-text">Java锁的种类以及辨析 锁作为并发共享数据，保证一致性的工具，在JAVA平台有多种实现(如 synchronized 和 ReentrantLock等等 ) 。这些已经写好提供的锁为我们开发提供了便利，但是锁的具体性质以及类型却很少被提及。本系列文章将分析JAVA中常见的锁以及其特性，为大家答疑解惑。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1、自旋锁"><span class="nav-number">20.0.2.</span> <span class="nav-text">1、自旋锁</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、自旋锁的其他种类"><span class="nav-number">20.0.3.</span> <span class="nav-text">2、自旋锁的其他种类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、阻塞锁"><span class="nav-number">20.0.4.</span> <span class="nav-text">3、阻塞锁</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、可重入锁"><span class="nav-number">20.0.5.</span> <span class="nav-text">4、可重入锁</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5、读写锁"><span class="nav-number">20.0.6.</span> <span class="nav-text">5、读写锁</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6、互斥锁"><span class="nav-number">20.0.7.</span> <span class="nav-text">6、互斥锁</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7、悲观锁"><span class="nav-number">20.0.8.</span> <span class="nav-text">7、悲观锁</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8、乐观锁"><span class="nav-number">20.0.9.</span> <span class="nav-text">8、乐观锁</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9、公平锁"><span class="nav-number">20.0.10.</span> <span class="nav-text">9、公平锁</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10、非公平锁"><span class="nav-number">20.0.11.</span> <span class="nav-text">10、非公平锁</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11、偏向锁"><span class="nav-number">20.0.12.</span> <span class="nav-text">11、偏向锁</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12、对象锁"><span class="nav-number">20.0.13.</span> <span class="nav-text">12、对象锁</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13、线程锁"><span class="nav-number">20.0.14.</span> <span class="nav-text">13、线程锁</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#14、锁粗化"><span class="nav-number">20.0.15.</span> <span class="nav-text">14、锁粗化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#15、轻量级锁"><span class="nav-number">20.0.16.</span> <span class="nav-text">15、轻量级锁</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#16、锁消除"><span class="nav-number">20.0.17.</span> <span class="nav-text">16、锁消除</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#17、锁膨胀"><span class="nav-number">20.0.18.</span> <span class="nav-text">17、锁膨胀</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#18、信号量"><span class="nav-number">20.0.19.</span> <span class="nav-text">18、信号量</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#21-下面程序输出为"><span class="nav-number">21.</span> <span class="nav-text">21 下面程序输出为</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#22-重写"><span class="nav-number">22.</span> <span class="nav-text">22 重写</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#23-下面哪项技术可以用在WEB开发中实现会话跟踪实现？"><span class="nav-number">23.</span> <span class="nav-text">23  下面哪项技术可以用在WEB开发中实现会话跟踪实现？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#24-说明输出结果。"><span class="nav-number">24.</span> <span class="nav-text">24 说明输出结果。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#25-hashMap与hashTable"><span class="nav-number">25.</span> <span class="nav-text">25 hashMap与hashTable</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#26-如果int-x-20-y-5，则语句System-out-println-x-y-””-x-y-y-的输出结果是（）"><span class="nav-number">26.</span> <span class="nav-text">26 如果int x=20, y=5，则语句System.out.println(x+y +””+(x+y)+y);  的输出结果是（）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#27-有关hashMap跟hashTable的区别，说法正确的是？"><span class="nav-number">27.</span> <span class="nav-text">27 有关hashMap跟hashTable的区别，说法正确的是？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#28-如下代码的输出结果是什么？"><span class="nav-number">28.</span> <span class="nav-text">28 如下代码的输出结果是什么？</span></a></li></ol></div>
             
 
           </div>
