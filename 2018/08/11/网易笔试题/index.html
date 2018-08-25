@@ -92,7 +92,8 @@
 <meta property="og:image" content="http://yoursite.com/2018/08/11/网易笔试题/网易笔试题/1.png">
 <meta property="og:image" content="http://yoursite.com/2018/08/11/网易笔试题/网易笔试题/2.png">
 <meta property="og:image" content="http://yoursite.com/2018/08/11/网易笔试题/网易笔试题/3.png">
-<meta property="og:updated_time" content="2018-08-11T02:17:32.958Z">
+<meta property="og:image" content="http://yoursite.com/2018/08/11/网易笔试题/网易笔试题/4.png">
+<meta property="og:updated_time" content="2018-08-25T14:09:48.011Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="网易笔试题">
 <meta name="twitter:description" content="1. 如何从有数字规律的网址抓取网页并保存在当前目录？假设网址为 http://test/0.xml，其中这个数字可以递增到100。 for(int i=0; i&amp;lt;100;++i)wget http://test/$i.xml;  wget http://test/{$0-$100}.xml  wget http://test/`[0-100]`.xml  for((i=0;i&amp;lt;100">
@@ -767,6 +768,155 @@ public class Test {
 </li>
 </ul>
 <p>答案：B<br><img src="网易笔试题/3.png" alt=""></p>
+<hr>
+<h1 id="19-对下列数字：1-48-8-13-26-55-12-6-56-99-16-100进行希尔排序（最小增量排序），进行2次后的结果"><a href="#19-对下列数字：1-48-8-13-26-55-12-6-56-99-16-100进行希尔排序（最小增量排序），进行2次后的结果" class="headerlink" title="19.对下列数字：1, 48, 8, 13, 26, 55, 12, 6, 56, 99, 16, 100进行希尔排序（最小增量排序），进行2次后的结果"></a>19.对下列数字：1, 48, 8, 13, 26, 55, 12, 6, 56, 99, 16, 100进行希尔排序（最小增量排序），进行2次后的结果</h1><ul>
+<li><p>1, 8, 13, 48, 6, 12, 26, 55, 16, 56, 99, 100</p>
+</li>
+<li><p>1, 6, 8, 12, 16, 55, 13, 26, 56, 99, 48, 100</p>
+</li>
+<li><p>1, 8, 13, 26, 12, 6, 16, 48, 55, 56, 99, 100</p>
+</li>
+<li><p>100, 1, 6, 8, 12, 13, 16, 26, 48, 55, 56, 99</p>
+</li>
+</ul>
+<p>答案：B<br><img src="网易笔试题/4.png" alt=""></p>
+<hr>
+<h1 id="20-下列排序算法中，哪些时间复杂度不会超过nlogn？"><a href="#20-下列排序算法中，哪些时间复杂度不会超过nlogn？" class="headerlink" title="20.下列排序算法中，哪些时间复杂度不会超过nlogn？"></a>20.下列排序算法中，哪些时间复杂度不会超过nlogn？</h1><ul>
+<li><p>快速排序</p>
+</li>
+<li><p>堆排序</p>
+</li>
+<li><p>归并排序</p>
+</li>
+<li><p>冒泡排序</p>
+</li>
+</ul>
+<p>答案：BC<br>解析：几种常见的排序算法对比：</p>
+<table>
+<thead>
+<tr>
+<th>排序法</th>
+<th>平均时间</th>
+<th>最差情形</th>
+<th>稳定度</th>
+<th>额外空间</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>冒泡</td>
+<td>O(n^2)</td>
+<td>O(n^2)</td>
+<td>稳定</td>
+<td>O(1)</td>
+<td>n小时较好</td>
+</tr>
+<tr>
+<td>交换</td>
+<td>O(n^2)</td>
+<td>O(n^2)</td>
+<td>不稳定</td>
+<td>O(1)</td>
+<td>n小时较好</td>
+</tr>
+<tr>
+<td>选择</td>
+<td>O(n^2)</td>
+<td>O(n^2)</td>
+<td>不稳定</td>
+<td>O(1)</td>
+<td>n小时较好</td>
+</tr>
+<tr>
+<td>插入</td>
+<td>O(n^2)</td>
+<td>O(n^2)</td>
+<td>稳定</td>
+<td>O(1)</td>
+<td>大部分已排序时较好</td>
+</tr>
+<tr>
+<td>基数</td>
+<td>O(logR^B)</td>
+<td>O(logR^B)</td>
+<td>稳定</td>
+<td>O(n)</td>
+<td>B是真数(0-9)，R是基数(个十百)</td>
+</tr>
+<tr>
+<td>Shell</td>
+<td>O(nlogn)</td>
+<td>O(n^s)</td>
+<td>不稳定</td>
+<td>O(1)</td>
+<td>s是所选分组</td>
+</tr>
+<tr>
+<td>快速</td>
+<td>O(nlogn)</td>
+<td>O(n^2)</td>
+<td>不稳定</td>
+<td>O(nlogn)</td>
+<td>n大时较好</td>
+</tr>
+<tr>
+<td>归并</td>
+<td>O(nlogn)</td>
+<td>O(nlogn)</td>
+<td>稳定</td>
+<td>O(1)</td>
+<td>n大时较好</td>
+</tr>
+<tr>
+<td>堆</td>
+<td>O(nlogn)</td>
+<td>O(nlogn)</td>
+<td>不稳定</td>
+<td>O(1)</td>
+<td>n大时较好</td>
+</tr>
+</tbody>
+</table>
+<p>稳定的排序：冒泡，插入，基数，归并</p>
+<p>答案：BC</p>
+<hr>
+<p>Test.main() 函数执行后的输出是（）<br>     public class Test {<br>        public static void main(String [] args){<br>            System.out.println(new B().getValue());<br>      }<br>      static class A{<br>        protected int value;<br>        public A(int v) {<br>            setValue(v);<br>        }<br>    public void setValue(int value){<br>        this.value = value;<br>    }<br>    public int getValue(){<br>        try{<br>            value++;<br>    return value;<br>    } catch(Exception e){<br>        System.out.println(e.toString());<br>    } finally {<br>        this.setValue(value);<br>        System.out.println(value);<br>    }<br>     return value;<br>    }<br>    }<br>    static class B extends A{<br>    public B() {<br>    super(5);<br>    setValue(getValue() - 3);<br>    }<br>    public void setValue(int value){<br>    super.setValue(2 * value);<br>    }<br>     }<br>    }</p>
+<ul>
+<li><p>11 17 34</p>
+</li>
+<li><p>22 74 74</p>
+</li>
+<li><p>6 7 7</p>
+</li>
+<li><p>22 34 17</p>
+</li>
+</ul>
+<p>答案：D<br>首先，super()函数指的是调用父类的构造方法</p>
+<p>①</p>
+<p>new B()</p>
+<p>执行B的构造函数，第一行是super(5);</p>
+<p>此时执行的是A的构造函数，A的构造函数调用的是setValue()方法，由于B重写了A的这个方法，</p>
+<p>所以！！！执行的是B的 setValue()方法。</p>
+<p>即传入的参数是2*5=10</p>
+<p>此时，因为super，所以调用的是父类的 setValue()方法，即value=10</p>
+<p>第一行执行完毕。</p>
+<p>第二行是 setValue(getValue()-3);</p>
+<p>B没有getValue()方法，故执行父类的此方法，</p>
+<p>try返回的是value=10+1=11，保存在临时栈中</p>
+<p>finally中调用this的方法，这个this指的是B的对象，又重写，故就是B的 setValue()方法</p>
+<p>value=2*11=22，第一个打印到屏幕上的数字</p>
+<p>接下来参数 getValue()-3=11-3=8</p>
+<p>传入B的 setValue()方法</p>
+<p>此时value=2*8=16</p>
+<p>至此，new B()执行结束</p>
+<p>②</p>
+<p>new B(). getValue()</p>
+<p>B没有 getValue()，故执行A的 getValue()</p>
+<p>try返回16+1=17，保存到临时栈中</p>
+<p>finally调用B的 setValue()方法</p>
+<p>value=17*2=34，第二个打印到屏幕上面的数字</p>
+<p>最后主函数打印返回值，也就是try保存到临时栈的17 </p>
 
       
     </div>
@@ -808,6 +958,10 @@ public class Test {
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/08/25/牛客网java面试题120/" rel="prev" title="牛客网java面试120题">
+                牛客网java面试120题 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -914,7 +1068,7 @@ public class Test {
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -936,7 +1090,7 @@ public class Test {
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
@@ -998,7 +1152,7 @@ public class Test {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-如何从有数字规律的网址抓取网页并保存在当前目录？假设网址为-http-test-0-xml，其中这个数字可以递增到100。"><span class="nav-number">1.</span> <span class="nav-text">1. 如何从有数字规律的网址抓取网页并保存在当前目录？假设网址为 http://test/0.xml，其中这个数字可以递增到100。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-关于计算机网络，以下说法正确的是"><span class="nav-number">2.</span> <span class="nav-text">3. 关于计算机网络，以下说法正确的是</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-关于MySQL索引-，下面说法正确的是（）"><span class="nav-number">3.</span> <span class="nav-text">4.关于MySQL索引 ，下面说法正确的是（）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-在Linux系统中，可以用来查找可执行文件的是？"><span class="nav-number">4.</span> <span class="nav-text">5.在Linux系统中，可以用来查找可执行文件的是？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-有一条TCP连接，它的最大报文段长度为4KB，TCP拥塞窗口为24KB，这时候发生超时，那么该拥塞窗口变为了（）"><span class="nav-number">5.</span> <span class="nav-text">6.有一条TCP连接，它的最大报文段长度为4KB，TCP拥塞窗口为24KB，这时候发生超时，那么该拥塞窗口变为了（）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-在Java中，包com中定义了类TestUtil，在com的子包util中定义了同名类TestUtil，给定如下Java代码，编译运行时，将发生（-）。"><span class="nav-number">6.</span> <span class="nav-text">7.在Java中，包com中定义了类TestUtil，在com的子包util中定义了同名类TestUtil，给定如下Java代码，编译运行时，将发生（ ）。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8-给定Java代码如下所示，则编译运行后，输出结果是（-）。"><span class="nav-number">7.</span> <span class="nav-text">8.给定Java代码如下所示，则编译运行后，输出结果是（ ）。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9-给定某Java程序的main方法如下，该程序编译运行后的结果是（-）。"><span class="nav-number">8.</span> <span class="nav-text">9.给定某Java程序的main方法如下，该程序编译运行后的结果是（ ）。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#10-给定某Java程序的main方法如下，该程序编译运行后的结果是（-）。"><span class="nav-number">9.</span> <span class="nav-text">10.给定某Java程序的main方法如下，该程序编译运行后的结果是（ ）。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#12-下面关于进程和线程说法错误的是（）"><span class="nav-number">10.</span> <span class="nav-text">12.下面关于进程和线程说法错误的是（）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#13-下面关于线程同步说法错误的是（）"><span class="nav-number">11.</span> <span class="nav-text">13.下面关于线程同步说法错误的是（）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#16-已知有4个矩阵分别大小为M1-53-M2-34-M3-42-M4-27-下面组合计算所需要的乘法次数最优的为？"><span class="nav-number">12.</span> <span class="nav-text">16.已知有4个矩阵分别大小为M1(53) M2(34) M3(42) M4(27) 下面组合计算所需要的乘法次数最优的为？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#17-一个完全二叉树节点数为200，则其叶子结点个数为？"><span class="nav-number">13.</span> <span class="nav-text">17.一个完全二叉树节点数为200，则其叶子结点个数为？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#18-字符串zmnzizi用哈夫曼编码来编码，则共有多少位？"><span class="nav-number">14.</span> <span class="nav-text">18.字符串zmnzizi用哈夫曼编码来编码，则共有多少位？</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-如何从有数字规律的网址抓取网页并保存在当前目录？假设网址为-http-test-0-xml，其中这个数字可以递增到100。"><span class="nav-number">1.</span> <span class="nav-text">1. 如何从有数字规律的网址抓取网页并保存在当前目录？假设网址为 http://test/0.xml，其中这个数字可以递增到100。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-关于计算机网络，以下说法正确的是"><span class="nav-number">2.</span> <span class="nav-text">3. 关于计算机网络，以下说法正确的是</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-关于MySQL索引-，下面说法正确的是（）"><span class="nav-number">3.</span> <span class="nav-text">4.关于MySQL索引 ，下面说法正确的是（）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-在Linux系统中，可以用来查找可执行文件的是？"><span class="nav-number">4.</span> <span class="nav-text">5.在Linux系统中，可以用来查找可执行文件的是？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-有一条TCP连接，它的最大报文段长度为4KB，TCP拥塞窗口为24KB，这时候发生超时，那么该拥塞窗口变为了（）"><span class="nav-number">5.</span> <span class="nav-text">6.有一条TCP连接，它的最大报文段长度为4KB，TCP拥塞窗口为24KB，这时候发生超时，那么该拥塞窗口变为了（）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-在Java中，包com中定义了类TestUtil，在com的子包util中定义了同名类TestUtil，给定如下Java代码，编译运行时，将发生（-）。"><span class="nav-number">6.</span> <span class="nav-text">7.在Java中，包com中定义了类TestUtil，在com的子包util中定义了同名类TestUtil，给定如下Java代码，编译运行时，将发生（ ）。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8-给定Java代码如下所示，则编译运行后，输出结果是（-）。"><span class="nav-number">7.</span> <span class="nav-text">8.给定Java代码如下所示，则编译运行后，输出结果是（ ）。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9-给定某Java程序的main方法如下，该程序编译运行后的结果是（-）。"><span class="nav-number">8.</span> <span class="nav-text">9.给定某Java程序的main方法如下，该程序编译运行后的结果是（ ）。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#10-给定某Java程序的main方法如下，该程序编译运行后的结果是（-）。"><span class="nav-number">9.</span> <span class="nav-text">10.给定某Java程序的main方法如下，该程序编译运行后的结果是（ ）。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#12-下面关于进程和线程说法错误的是（）"><span class="nav-number">10.</span> <span class="nav-text">12.下面关于进程和线程说法错误的是（）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#13-下面关于线程同步说法错误的是（）"><span class="nav-number">11.</span> <span class="nav-text">13.下面关于线程同步说法错误的是（）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#16-已知有4个矩阵分别大小为M1-53-M2-34-M3-42-M4-27-下面组合计算所需要的乘法次数最优的为？"><span class="nav-number">12.</span> <span class="nav-text">16.已知有4个矩阵分别大小为M1(53) M2(34) M3(42) M4(27) 下面组合计算所需要的乘法次数最优的为？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#17-一个完全二叉树节点数为200，则其叶子结点个数为？"><span class="nav-number">13.</span> <span class="nav-text">17.一个完全二叉树节点数为200，则其叶子结点个数为？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#18-字符串zmnzizi用哈夫曼编码来编码，则共有多少位？"><span class="nav-number">14.</span> <span class="nav-text">18.字符串zmnzizi用哈夫曼编码来编码，则共有多少位？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#19-对下列数字：1-48-8-13-26-55-12-6-56-99-16-100进行希尔排序（最小增量排序），进行2次后的结果"><span class="nav-number">15.</span> <span class="nav-text">19.对下列数字：1, 48, 8, 13, 26, 55, 12, 6, 56, 99, 16, 100进行希尔排序（最小增量排序），进行2次后的结果</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#20-下列排序算法中，哪些时间复杂度不会超过nlogn？"><span class="nav-number">16.</span> <span class="nav-text">20.下列排序算法中，哪些时间复杂度不会超过nlogn？</span></a></li></ol></div>
             
 
           </div>
